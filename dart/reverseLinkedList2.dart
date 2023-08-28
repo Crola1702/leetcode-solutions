@@ -57,24 +57,7 @@ ListNode? reverseBetween(ListNode? head, int left, int right) {
   }
 
   // Copy after right
-  var end = current_head_node == null;
-
-  if (!end) {
-    current_result_node.next = ListNode();
-    current_result_node = current_result_node.next!;
-  }
-
-  while (!end) {
-    current_result_node.val = current_head_node!.val;
-
-    current_head_node = current_head_node.next;
-    if (current_head_node != null) {
-      current_result_node.next = ListNode();
-      current_result_node = current_result_node.next!;
-    } else {
-      break;
-    }
-  }
+  current_result_node.next = current_head_node;
 
   return result;
 }
